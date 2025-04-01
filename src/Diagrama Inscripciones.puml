@@ -12,7 +12,6 @@ Inscripcion o-- Alumno
 
 
 class Materia {
--codigoMateria: Integer
 -nombreMateria: String
 -correlativas: List<Materia>
 
@@ -22,10 +21,10 @@ class Materia {
 class Alumno {
 -nombre: String
 -apellido: String
--legajo: Integer
 -materiasAprobadas: List<Materia>
 
 +puedeCursar(unaMateria: Materia): Bool
+-inscribirseAMaterias(materias: List<Materias)
 }
 
 class Inscripcion {
