@@ -22,6 +22,7 @@ class Alumno {
 -nombre: String
 -apellido: String
 -materiasAprobadas: List<Materia>
+-materiasAInscribirse: List<Materia>
 
 +puedeCursar(unaMateria: Materia): Bool
 -inscribirseAMaterias(materias: List<Materias)

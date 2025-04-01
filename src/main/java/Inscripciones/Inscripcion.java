@@ -22,6 +22,6 @@ public class Inscripcion {
     }
 
     private void getMateriasSolicitadas() {
-        this.materiasSolicitadas = alumno.getMateriasSolicitadasAInscribirse();
+        this.materiasSolicitadas = alumno.getMateriasAInscribirse();
     }
 }

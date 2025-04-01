@@ -6,26 +6,31 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Alumno {
     private String nombre;
     private String apellido;
     private List<Materia> materiasAprobadas;
-    private List<Materia> materiasSolicitadasAInscribirse;
+    private List<Materia> materiasAInscribirse;
 
-    public Alumno(String nombre, String apellido, List<Materia> materiasAprobadas) {
+    public Alumno(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.materiasAprobadas = materiasAprobadas;
-        this.materiasSolicitadasAInscribirse = new ArrayList<>();
+        this.materiasAprobadas = new ArrayList<>();
+        this.materiasAInscribirse = new ArrayList<>();
     }
 
     public Boolean puedeCursar(Materia unaMateria){
         return unaMateria.cumpleCorrelativas(this);
     }
 
-    private List<Materia> inscribirseAMateria(List<Materia> materias) {
-        materiasSolicitadasAInscribirse.addAll(materias);
-        return materiasSolicitadasAInscribirse;
+    public List<Materia> inscribirseAMateria(Materia materia) {
+        materiasAInscribirse.add(materia);
+        return materiasAInscribirse;
+    }
+
+    public void addMateriaAprobada(Materia unaMateria){
+        materiasAprobadas.add(unaMateria);
     }
 }
